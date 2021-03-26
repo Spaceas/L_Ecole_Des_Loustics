@@ -1,4 +1,4 @@
-package fr.iut2.androidtp;
+package com.example.lecole_des_loustics;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,14 +7,14 @@ import android.widget.NumberPicker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Exercice5Activity extends AppCompatActivity {
+public class MultActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         // On charge le XML pour créer l'arbre graphique
-        setContentView(R.layout.activity_exercice5);
+        setContentView(R.layout.activity_mult);
         NumberPicker nb = findViewById(R.id.tableMult);
         nb.setMaxValue(12);
         nb.setMinValue(0);

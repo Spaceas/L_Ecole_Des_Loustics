@@ -1,8 +1,9 @@
-package fr.iut2.androidtp;
+package com.example.lecole_des_loustics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -34,19 +35,22 @@ public class TableMult extends AppCompatActivity {
 
         //On créer la table de multiplication
         tableau = new TableData(mult);
+
+        modifTable();
     }
 
     public void modifTable(){
         LinearLayout linear = (LinearLayout)findViewById(R.id.viewMain);
-        for(Multiplication m : tableau.getTable() ){
+        for(Multiplication m : tableau.getTable() ) {
             LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul, null);
             TextView calcul = (TextView) linearTMP.findViewById(R.id.template_calcul);
-
-            EditText resultat = (EditText) linearTMP.findViewById(R.id.template_resultat);
-            resultat.setText("?");
-
+            calcul.setText(m.getOperande1() + " x " + m.getOperande2() + " = ");
             linear.addView(linearTMP);
         }
+        Button lastButtonHero = new Button(this);
+        lastButtonHero.setText("Valider");
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        linear.addView(lastButtonHero,lp);
     }
 
 

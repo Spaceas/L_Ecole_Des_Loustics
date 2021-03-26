@@ -1,4 +1,4 @@
-package fr.iut2.androidtp;
+package com.example.lecole_des_loustics;
 
 public class Multiplication {
     //Classe qui ne s'occupe que des données, ne modifie pas l'affichage graphique
