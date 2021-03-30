@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,17 +41,13 @@ public class TableMult extends AppCompatActivity {
     }
 
     public void modifTable(){
-        LinearLayout linear = (LinearLayout)findViewById(R.id.viewMain);
+        LinearLayout linear = (LinearLayout) findViewById(R.id.multBloc);
         for(Multiplication m : tableau.getTable() ) {
             LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul, null);
             TextView calcul = (TextView) linearTMP.findViewById(R.id.template_calcul);
             calcul.setText(m.getOperande1() + " x " + m.getOperande2() + " = ");
             linear.addView(linearTMP);
         }
-        Button lastButtonHero = new Button(this);
-        lastButtonHero.setText("Valider");
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        linear.addView(lastButtonHero,lp);
     }
 
 
