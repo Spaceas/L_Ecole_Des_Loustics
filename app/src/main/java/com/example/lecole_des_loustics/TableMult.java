@@ -3,8 +3,10 @@ package com.example.lecole_des_loustics;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,14 +39,11 @@ public class TableMult extends AppCompatActivity {
     }
 
     public void modifTable(){
-        LinearLayout linear = (LinearLayout)findViewById(R.id.viewMain);
-        for(Multiplication m : tableau.getTable() ){
+        LinearLayout linear = (LinearLayout) findViewById(R.id.multBloc);
+        for(Multiplication m : tableau.getTable() ) {
             LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul, null);
             TextView calcul = (TextView) linearTMP.findViewById(R.id.template_calcul);
-
-            EditText resultat = (EditText) linearTMP.findViewById(R.id.template_resultat);
-            resultat.setText("?");
-
+            calcul.setText(m.getOperande1() + " x " + m.getOperande2() + " = ");
             linear.addView(linearTMP);
         }
     }
