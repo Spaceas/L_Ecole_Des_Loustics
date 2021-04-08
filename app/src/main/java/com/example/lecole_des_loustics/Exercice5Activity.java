@@ -1,4 +1,4 @@
-package fr.iut2.androidtp;
+package com.example.lecole_des_loustics;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package fr.iut2.androidtp;
+package com.example.lecole_des_loustics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,7 +33,7 @@ public class TableMult extends AppCompatActivity {
         }
 
         //On créer la table de multiplication
-        tableau = new TableData(mult);
+        tableau = new com.example.lecole_des_loustics.TableData(mult);
     }
 
     public void modifTable(){
