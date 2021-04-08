@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
+    //Comentaire pour pouvoir push
     public void onMult(View view){
         Intent intent = new Intent(this, MultActivity.class);
         startActivity(intent);
