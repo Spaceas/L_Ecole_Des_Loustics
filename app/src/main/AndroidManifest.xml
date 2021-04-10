@@ -18,6 +18,10 @@
         </activity>
         <activity android:name=".MultActivity"></activity>
         <activity android:name=".TableMult"></activity>
+        <activity android:name=".ExoMathsActivity"></activity>
+        <activity android:name=".AdditionActivity"></activity>
+        <activity android:name=".ResultatAdditionActivity"></activity>
+
     </application>
 
 </manifest>

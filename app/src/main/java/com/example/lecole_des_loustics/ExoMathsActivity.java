@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import com.example.lecole_des_loustics.MainActivity;
+import com.example.lecole_des_loustics.MultActivity;
+import com.example.lecole_des_loustics.AdditionActivity;
 
 
 

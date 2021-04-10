@@ -48,10 +48,10 @@ public class AdditionActivity extends AppCompatActivity {
         boutonValider.setVisibility(View.GONE);
         boutonPrecedent.setVisibility(View.GONE);
         // Temp line creation
-        LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul, null);
+        LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul_addition, null);
 
-        TextView calcul = linearTMP.findViewById(R.id.template_caclul);
-        calcul.setText(additions.get(additionActuelle).getOperande1() + " + " + additions.get(additionActuelle).getOperande2() + " = ");
+        TextView calcul = (TextView) linearTMP.findViewById(R.id.template_calcul);
+        calcul.setText( additions.get(additionActuelle).getOperande1() + " + " + additions.get(additionActuelle).getOperande2() + " = ");
 
         result = linearTMP.findViewById(R.id.template_result);
 
@@ -61,7 +61,7 @@ public class AdditionActivity extends AppCompatActivity {
     public void Valider(View view){
 
         if (result.getText().toString() != "") {
-            int score = 0;
+            int score = 1;
             for (Addition addition : additions) {
                 if(addition.resultatOK()){
                     score = score+1;
@@ -88,9 +88,9 @@ public class AdditionActivity extends AppCompatActivity {
 
             linear.removeAllViews();
             // Temp line creation
-            LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul, null);
+            LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul_addition, null);
 
-            TextView calcul = linearTMP.findViewById(R.id.template_caclul);
+            TextView calcul = linearTMP.findViewById(R.id.template_calcul);
             calcul.setText(additions.get(additionActuelle).getOperande1() + " + " + additions.get(additionActuelle).getOperande2() + " = ");
 
             result = linearTMP.findViewById(R.id.template_result);
@@ -125,9 +125,9 @@ public class AdditionActivity extends AppCompatActivity {
 
             linear.removeAllViews();
             // Temp line creation
-            LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul, null);
+            LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul_addition, null);
 
-            TextView calcul = linearTMP.findViewById(R.id.template_caclul);
+            TextView calcul = linearTMP.findViewById(R.id.template_calcul);
             calcul.setText(additions.get(additionActuelle).getOperande1() + " + " + additions.get(additionActuelle).getOperande2() + " = ");
 
             result = linearTMP.findViewById(R.id.template_result);
