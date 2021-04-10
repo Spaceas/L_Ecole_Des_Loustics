@@ -1,4 +1,4 @@
-package db;
+package com.example.lecole_des_loustics.db;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -14,8 +14,6 @@ public class User implements Serializable {
 
     @ColumnInfo(name = "Nom")
     private String nom;
-
-
 
 
     /*

@@ -1,4 +1,4 @@
-package db;
+package com.example.lecole_des_loustics.db;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

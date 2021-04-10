@@ -3,10 +3,7 @@ package com.example.lecole_des_loustics;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -35,7 +32,7 @@ public class TableMult extends AppCompatActivity {
         }
 
         //On créer la table de multiplication
-        tableau = new com.example.lecole_des_loustics.TableData(mult);
+        tableau = new TableData(mult);
     }
 
     public void modifTable(){

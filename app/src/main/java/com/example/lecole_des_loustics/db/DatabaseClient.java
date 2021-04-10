@@ -1,4 +1,4 @@
-package db;
+package com.example.lecole_des_loustics.db;
 
 import android.content.Context;
 
@@ -6,8 +6,6 @@ import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
-
-import java.util.concurrent.Executors;
 
 public class DatabaseClient {
 

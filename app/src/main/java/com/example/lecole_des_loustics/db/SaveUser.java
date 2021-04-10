@@ -1,4 +1,4 @@
-package db;
+package com.example.lecole_des_loustics.db;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,9 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lecole_des_loustics.R;
-
-import db.DatabaseClient;
-import db.User;
 
 public class SaveUser extends AppCompatActivity {
 
@@ -34,8 +31,8 @@ public class SaveUser extends AppCompatActivity {
         mDb = DatabaseClient.getInstance(getApplicationContext());
 
         // Récupérer les vues
-        editTextUserView = findViewById(R.id.editTextUser);
-        saveView = findViewById(R.id.bouton_save);
+        //editTextUserView = findViewById(R.id.editTextUser);
+        //saveView = findViewById(R.id.bouton_save);
 
         // Associer un événement au bouton save
         saveView.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +46,7 @@ public class SaveUser extends AppCompatActivity {
     private void save() {
 
         // Récupérer les informations contenues dans les vues
-        final String user_nom = editTextUserView.getText().toString().trim();
+        final String user_nom = editTextUserView.getText().toString();
 
         // Vérifier les informations fournies par l'utilisateur
         if (user_nom.isEmpty()) {
