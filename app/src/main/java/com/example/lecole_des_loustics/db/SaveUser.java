@@ -25,25 +25,25 @@ public class SaveUser extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_add_task);
+        setContentView(R.layout.add_user);
 
         // Récupération du DatabaseClient
         mDb = DatabaseClient.getInstance(getApplicationContext());
 
         // Récupérer les vues
-        //editTextUserView = findViewById(R.id.editTextUser);
-        //saveView = findViewById(R.id.bouton_save);
+        editTextUserView = findViewById(R.id.editTextUser);
+        saveView = findViewById(R.id.bouton_save);
 
         // Associer un événement au bouton save
         saveView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                save();
+                saveUser();
             }
         });
     }
 
-    private void save() {
+    private void saveUser() {
 
         // Récupérer les informations contenues dans les vues
         final String user_nom = editTextUserView.getText().toString();
@@ -54,7 +54,6 @@ public class SaveUser extends AppCompatActivity {
             editTextUserView.requestFocus();
             return;
         }
-
 
         /**
          * Création d'une classe asynchrone pour sauvegarder la tache donnée par l'utilisateur
@@ -69,9 +68,7 @@ public class SaveUser extends AppCompatActivity {
                 user.setNom(user_nom);
 
                 // adding to database
-                mDb.getAppDatabase()
-                        .userDao()
-                        .insert(user);
+                mDb.getAppDatabase().userDao().insert(user);
 
                 return user;
             }

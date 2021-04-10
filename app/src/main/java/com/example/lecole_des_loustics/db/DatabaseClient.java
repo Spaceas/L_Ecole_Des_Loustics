@@ -51,8 +51,7 @@ public class DatabaseClient {
             super.onCreate(db);
 
             //
-            db.execSQL("INSERT INTO task (task, description) VALUES(\"tâche 1\", \"installer la librairie Room\");");
-            db.execSQL("INSERT INTO task (task, description) VALUES(\"tâche 2\", \" Créer DatabaseClient\");");
+            db.execSQL("INSERT INTO User (id, nom) VALUES(\" 1\", \"Paul ?\");");
 
         }
     };

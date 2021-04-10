@@ -2,7 +2,10 @@ package com.example.lecole_des_loustics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -27,17 +30,22 @@ public class TableMult extends AppCompatActivity {
         numTable = getIntent().getIntExtra(VAL_KEY, 0);
 
         //On créer toutes les multiplications
-        for(int i = 0; i < tableau.getTaille(); i++){
-            mult.add(new Multiplication(numTable, i+1));
+        for (int i = 0; i < tableau.getTaille(); i++) {
+            mult.add(new Multiplication(numTable, i + 1));
         }
+
 
         //On créer la table de multiplication
         tableau = new TableData(mult);
+        modifTable();
+
+
     }
 
-    public void modifTable(){
+    public void modifTable() {
         LinearLayout linear = (LinearLayout) findViewById(R.id.multBloc);
-        for(Multiplication m : tableau.getTable() ) {
+
+        for (Multiplication m : tableau.getTable()) {
             LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_calcul, null);
             TextView calcul = (TextView) linearTMP.findViewById(R.id.template_calcul);
             calcul.setText(m.getOperande1() + " x " + m.getOperande2() + " = ");
@@ -45,5 +53,22 @@ public class TableMult extends AppCompatActivity {
         }
     }
 
+    public void afficheResultat(View view) {
+        int score = 0;
+        for (Multiplication m : tableau.getTable()) {
+            if (m.resultatOK()) {
+                score++;
+            }
+        }
 
+        // Intent creation
+        Intent intent = new Intent(this, ResultatMultActivity.class);
+
+        // Adding value
+        intent.putExtra(ResultatMultActivity.SCOREMULT, Integer.toString(score));
+
+        // Starting activity
+        startActivity(intent);
+
+    }
 }

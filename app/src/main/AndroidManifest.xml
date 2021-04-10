@@ -21,6 +21,8 @@
         <activity android:name=".ExoMathsActivity"></activity>
         <activity android:name=".AdditionActivity"></activity>
         <activity android:name=".ResultatAdditionActivity"></activity>
+        <activity android:name=".ResultatMultActivity"></activity>
+        <activity android:name=".db.SaveUser"></activity>
 
     </application>
 

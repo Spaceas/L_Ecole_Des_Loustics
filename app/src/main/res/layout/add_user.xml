@@ -5,29 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".db.SaveUser">
 
-    <TextView
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="L'école des Loustics"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:textSize="25dp"
-        android:id="@+id/textAccueil"/>
+        android:id="@+id/editTextUser"
+        />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="exoMaths"
-        android:text="Commencer les exercices" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="S'enregistrer "
-        android:onClick="creaUser"
+        android:text="Sauvegarder "
+        android:id="@+id/bouton_save"
         android:layout_gravity="center"
         />
 

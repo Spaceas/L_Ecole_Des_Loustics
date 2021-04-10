@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import com.example.lecole_des_loustics.ExoMathsActivity;
+import com.example.lecole_des_loustics.db.SaveUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void exoMaths(View view){
         Intent intent = new Intent(this, ExoMathsActivity.class);
+        startActivity(intent);
+    }
+
+    public void creaUser(View view){
+        Intent intent = new Intent(this, SaveUser.class);
         startActivity(intent);
     }
 }
