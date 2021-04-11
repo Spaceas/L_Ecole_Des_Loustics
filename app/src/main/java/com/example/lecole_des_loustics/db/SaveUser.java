@@ -17,8 +17,8 @@ public class SaveUser extends AppCompatActivity {
     private DatabaseClient mDb;
 
     // VIEW
-    private EditText editTextUserView;
-    private EditText editTextDescriptionView;
+    private EditText editTextNomView;
+    private EditText editTextPrenomView;
     private EditText editTextFinishByView;
     private Button saveView;
 
@@ -31,7 +31,8 @@ public class SaveUser extends AppCompatActivity {
         mDb = DatabaseClient.getInstance(getApplicationContext());
 
         // Récupérer les vues
-        editTextUserView = findViewById(R.id.editTextUser);
+        editTextNomView = findViewById(R.id.editTextNom);
+        editTextPrenomView = findViewById(R.id.editTextPrenom);
         saveView = findViewById(R.id.bouton_save);
 
         // Associer un événement au bouton save
@@ -46,12 +47,19 @@ public class SaveUser extends AppCompatActivity {
     private void saveUser() {
 
         // Récupérer les informations contenues dans les vues
-        final String user_nom = editTextUserView.getText().toString();
+        final String user_nom = editTextNomView.getText().toString();
+        final String user_prenom = editTextPrenomView.getText().toString();
 
         // Vérifier les informations fournies par l'utilisateur
         if (user_nom.isEmpty()) {
-            editTextUserView.setError("Entrez votre nom");
-            editTextUserView.requestFocus();
+            editTextNomView.setError("Entrez votre nom !");
+            editTextNomView.requestFocus();
+            return;
+        }
+
+        if (user_prenom.isEmpty()) {
+            editTextPrenomView.setError("Entrez votre prénom !");
+            editTextPrenomView.requestFocus();
             return;
         }
 
@@ -66,6 +74,7 @@ public class SaveUser extends AppCompatActivity {
                 // creating a task
                 User user = new User();
                 user.setNom(user_nom);
+                user.setPrenom(user_prenom);
 
                 // adding to database
                 mDb.getAppDatabase().userDao().insert(user);

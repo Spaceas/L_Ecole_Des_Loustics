@@ -21,7 +21,7 @@ public class DatabaseClient {
         // Créer l'objet représentant la base de données de votre application
         // à l'aide du "Room database builder"
         // MyToDos est le nom de la base de données
-        appDatabase = Room.databaseBuilder(context, AppDatabase.class, "EcoleLoustics").build();
+        appDatabase = Room.databaseBuilder(context, AppDatabase.class, "EcoleLoustics").addCallback(roomDatabaseCallback).build();
 
         ////////// REMPLIR LA BD à la première création à l'aide de l'objet roomDatabaseCallback
         // Ajout de la méthode addCallback permettant de populate (remplir) la base de données à sa création
@@ -50,8 +50,8 @@ public class DatabaseClient {
         public void onCreate(@NonNull SupportSQLiteDatabase db) {
             super.onCreate(db);
 
-            //
-            db.execSQL("INSERT INTO User (id, nom) VALUES(\" 1\", \"Paul ?\");");
+            db.execSQL("INSERT INTO QuestGeo (id, Intitule, BonneReponse) VALUES(\" 1\", \"Capitale France ?\",\"Paris\" );");
+            db.execSQL("INSERT INTO QuestGeo (id, Intitule, BonneReponse) VALUES(\" 2\", \"Capitale UK ?\",\"Londres\" );");
 
         }
     };

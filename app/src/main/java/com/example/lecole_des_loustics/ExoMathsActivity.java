@@ -35,6 +35,12 @@ public class ExoMathsActivity extends AppCompatActivity {
         startActivity(AdditionIntent);
     }
 
+    public void ExoGeo(View view){
+        Intent Geointent = new Intent(this, GeographieActivity.class );
+
+        startActivity(Geointent);
+    }
+
     public void RetourMenu(View view) {
         // Intent Creation
         Intent RetourIntent = new Intent(this, MainActivity.class);

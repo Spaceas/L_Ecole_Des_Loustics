@@ -30,6 +30,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Teste ta culture générale !"
+        android:onClick="ExoGeo"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="Retour au menu principal"
         android:onClick="RetourMenu"/>
 </LinearLayout>

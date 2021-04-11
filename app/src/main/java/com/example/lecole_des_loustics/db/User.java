@@ -15,6 +15,9 @@ public class User implements Serializable {
     @ColumnInfo(name = "Nom")
     private String nom;
 
+    @ColumnInfo(name = "Prenom")
+    private String prenom;
+
 
     /*
      * Getters and Setters
@@ -23,8 +26,16 @@ public class User implements Serializable {
         return nom;
     }
 
+    public String getPrenom() {
+        return prenom;
+    }
+
     public void setNom(String nomUser) {
         this.nom = nomUser;
+    }
+
+    public void setPrenom(String prenomUser) {
+        this.prenom = prenomUser;
     }
 
     public int getId() {

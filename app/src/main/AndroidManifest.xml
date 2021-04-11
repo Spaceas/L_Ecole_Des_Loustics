@@ -3,6 +3,7 @@
     package="com.example.lecole_des_loustics">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,14 +17,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MultActivity"></activity>
-        <activity android:name=".TableMult"></activity>
-        <activity android:name=".ExoMathsActivity"></activity>
-        <activity android:name=".AdditionActivity"></activity>
-        <activity android:name=".ResultatAdditionActivity"></activity>
-        <activity android:name=".ResultatMultActivity"></activity>
-        <activity android:name=".db.SaveUser"></activity>
-
+        <activity android:name=".MultActivity" />
+        <activity android:name=".TableMult" />
+        <activity android:name=".ExoMathsActivity" />
+        <activity android:name=".AdditionActivity" />
+        <activity android:name=".ResultatAdditionActivity" />
+        <activity android:name=".ResultatMultActivity" />
+        <activity android:name=".db.SaveUser" />
+        <activity android:name=".ListUser" />
+        <activity android:name=".GeographieActivity"></activity>
     </application>
 
 </manifest>

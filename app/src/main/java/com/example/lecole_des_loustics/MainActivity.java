@@ -25,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SaveUser.class);
         startActivity(intent);
     }
+
+    public void listerUser(View view){
+        Intent intent = new Intent(this, ListUser.class);
+        startActivity(intent);
+    }
 }
