@@ -38,7 +38,7 @@ public class GeographieActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition);
+        setContentView(R.layout.activity_geo);
 
         labelErreur = (TextView) findViewById(R.id.labelErreur);
         questionActuelle = 0;
@@ -134,7 +134,6 @@ public class GeographieActivity extends AppCompatActivity {
         RadioButton radio3 = (RadioButton) linearTMP.findViewById(R.id.radioButton3);
         radio3.setText(reponsesProposees.get(2));
 
-
         linear.addView(linearTMP);
     }
 
@@ -142,7 +141,7 @@ public class GeographieActivity extends AppCompatActivity {
 
 
             // Intent creation
-            Intent intent = new Intent(this, ResultatAdditionActivity.class);
+            Intent intent = new Intent(this, ResultatGeoActivity.class);
 
             // Adding value
             intent.putExtra(ResultatAdditionActivity.SCORE, Integer.toString(score));
@@ -153,8 +152,9 @@ public class GeographieActivity extends AppCompatActivity {
 
 
     public void Suivant(View view){
-        try{
 
+
+            groupeRadio = findViewById(R.id.boutonGroupe);
             LinearLayout tpmp = (LinearLayout) getLayoutInflater().inflate(R.layout.template_reponses_multiples, null);
             RadioButton radio = (RadioButton) tpmp.findViewById(groupeRadio.getCheckedRadioButtonId());
 
@@ -195,9 +195,7 @@ public class GeographieActivity extends AppCompatActivity {
                 boutonSuivant.setVisibility(View.GONE);
                 boutonValider.setVisibility(View.VISIBLE);
             }
-        } catch (Exception e) {
-            labelErreur.setText("Choisissez une réponse !");
-        }
+
 
     }
 
