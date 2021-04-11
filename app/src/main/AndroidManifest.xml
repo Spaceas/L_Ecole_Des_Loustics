@@ -26,6 +26,7 @@
         <activity android:name=".db.SaveUser" />
         <activity android:name=".ListUser" />
         <activity android:name=".GeographieActivity"></activity>
+        <activity android:name=".ResultatGeoActivity" />
     </application>
 
 </manifest>

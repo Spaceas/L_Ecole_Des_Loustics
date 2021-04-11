@@ -33,7 +33,6 @@ public class GeographieActivity extends AppCompatActivity {
 
     TextView labelErreur;
     Button boutonSuivant;
-    Button boutonPrecedent;
     Button boutonValider;
 
     @Override
@@ -117,11 +116,9 @@ public class GeographieActivity extends AppCompatActivity {
 
         linear = findViewById(R.id.results);
         boutonSuivant = (Button) findViewById(R.id.boutonSuivant);
-        boutonPrecedent = (Button) findViewById(R.id.boutonPrecedent);
         boutonValider = (Button) findViewById(R.id.boutonValider);
 
         boutonValider.setVisibility(View.GONE);
-        boutonPrecedent.setVisibility(View.GONE);
         // Temp line creation
         LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_reponses_multiples, null);
 
@@ -143,15 +140,6 @@ public class GeographieActivity extends AppCompatActivity {
 
     public void Valider(View view){
 
-            int id_OK = 0;
-            for(String prop : reponsesProposees ){
-                if(prop != bonneRep.get(questionActuelle)){
-                    id_OK++; }
-            }
-
-            if(groupeRadio.getCheckedRadioButtonId() == id_OK){
-                score++;
-            }
 
             // Intent creation
             Intent intent = new Intent(this, ResultatAdditionActivity.class);
@@ -166,6 +154,17 @@ public class GeographieActivity extends AppCompatActivity {
 
     public void Suivant(View view){
         try{
+
+            int id_OK = 1;
+            for(String prop : reponsesProposees ){
+                if(prop != bonneRep.get(questionActuelle)){
+                    id_OK++; }
+            }
+
+            if(groupeRadio.getCheckedRadioButtonId() == id_OK){
+                score++;
+            }
+
             questionActuelle = questionActuelle+1;
 
             Collections.shuffle(mauvaiseRep);
@@ -198,45 +197,12 @@ public class GeographieActivity extends AppCompatActivity {
             if (questionActuelle == 9){
                 boutonSuivant.setVisibility(View.GONE);
                 boutonValider.setVisibility(View.VISIBLE);
-            } else if (questionActuelle == 1){
-                boutonPrecedent.setVisibility(View.VISIBLE);
             }
         } catch (Exception e) {
             labelErreur.setText("Choisissez une réponse !");
         }
 
     }
-
-    public void Precedent(View view){
-        if (questionActuelle == 1) {
-            boutonPrecedent.setVisibility(View.GONE);
-        } else if(questionActuelle == 9){
-            boutonValider.setVisibility(View.GONE);
-            boutonSuivant.setVisibility(View.VISIBLE);
-        }
-        if (questionActuelle != 0) {
-            questionActuelle -= 1;
-
-            linear.removeAllViews();
-            // Temp line creation
-            LinearLayout linearTMP = (LinearLayout) getLayoutInflater().inflate(R.layout.template_reponses_multiples, null);
-
-            TextView question = (TextView) linearTMP.findViewById(R.id.template_question);
-            question.setText(intitule.get(questionActuelle));
-
-            RadioButton radio1 = (RadioButton) linearTMP.findViewById(R.id.radioButton1);
-            radio1.setText(reponsesProposees.get(0));
-
-            RadioButton radio2 = (RadioButton) linearTMP.findViewById(R.id.radioButton2);
-            radio2.setText(reponsesProposees.get(1));
-
-            RadioButton radio3 = (RadioButton) linearTMP.findViewById(R.id.radioButton3);
-            radio3.setText(reponsesProposees.get(2));
-
-            linear.addView(linearTMP);
-        }
-    }
-
 
 
 }
