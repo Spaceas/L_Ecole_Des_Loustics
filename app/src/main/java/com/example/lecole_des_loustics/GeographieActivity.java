@@ -74,7 +74,7 @@ public class GeographieActivity extends AppCompatActivity {
 
         mauvaiseRep = new ArrayList(){{
            add(" Ghana");
-           add(" Pekin");
+           add(" Chine");
            add(" Allemagne");
            add(" Guatemala");
            add(" Japon");
@@ -144,8 +144,10 @@ public class GeographieActivity extends AppCompatActivity {
     public void Suivant(View view){
         try{
             questionActuelle = questionActuelle+1;
+
             Collections.shuffle(mauvaiseRep);
 
+            reponsesProposees.clear();
             reponsesProposees.add(bonneRep.get(questionActuelle));
             reponsesProposees.add(mauvaiseRep.get(0));
             reponsesProposees.add(mauvaiseRep.get(1));
