@@ -26,7 +26,7 @@ public class GeographieActivity extends AppCompatActivity {
     public ArrayList<String> reponsesProposees = new ArrayList<>();
 
     public int questionActuelle;
-    int score = 1;
+    int score = 0;
     LinearLayout linear;
     EditText result;
     RadioGroup groupeRadio;
@@ -155,7 +155,7 @@ public class GeographieActivity extends AppCompatActivity {
 
 
             groupeRadio = findViewById(R.id.boutonGroupe);
-            LinearLayout tpmp = (LinearLayout) getLayoutInflater().inflate(R.layout.template_reponses_multiples, null);
+            LinearLayout tpmp = (LinearLayout) findViewById(R.id.results);
             RadioButton radio = (RadioButton) tpmp.findViewById(groupeRadio.getCheckedRadioButtonId());
 
             if(radio.getText().equals(bonneRep.get(questionActuelle))){
