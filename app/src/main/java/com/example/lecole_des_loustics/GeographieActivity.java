@@ -155,10 +155,9 @@ public class GeographieActivity extends AppCompatActivity {
     public void Suivant(View view){
         try{
 
-            int id_OK = 1;
-            for(String prop : reponsesProposees ){
-                if(prop != bonneRep.get(questionActuelle)){
-                    id_OK++; }
+            int id_OK = 0;
+            while(!reponsesProposees.get(id_OK).equals(bonneRep.get(questionActuelle))){
+                id_OK++;
             }
 
             if(groupeRadio.getCheckedRadioButtonId() == id_OK){
