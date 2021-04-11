@@ -13,10 +13,13 @@ import com.example.lecole_des_loustics.AdditionActivity;
 
 public class ExoMathsActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choix_exo_activity);
+
     }
 
     public void TableMulti(View view) {

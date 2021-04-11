@@ -1,6 +1,7 @@
 package com.example.lecole_des_loustics;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.lecole_des_loustics.MyApplication;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -49,6 +50,7 @@ public class ListUser extends AppCompatActivity {
 
                 // Récupération de la tâche cliquée à l'aide de l'adapter
                 User user = adapter.getItem(position);
+
 
                 // Message
                 Toast.makeText(ListUser.this, "Click : " + user.getNom(), Toast.LENGTH_SHORT).show();
